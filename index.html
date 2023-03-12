@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Gallery</title>
+</head>
+
+<body>
+    <div class="gallery-wrap">
+        <img src="images/BackBtn.png" id="BackBtn" alt="">
+        <div class="gallery">
+            <div>
+                <span><img src="images/1.jpeg" alt=""></span>
+                <span><img src="images/2.jpeg" alt=""></span>
+                <span><img src="images/3.jpeg" alt=""></span>
+            </div>
+            <div>
+                <span><img src="images/4.jpeg" alt=""></span>
+                <span><img src="images/5.jpeg" alt=""></span>
+                <span><img src="images/6.jpeg" alt=""></span>
+            </div>
+            <div>
+                <span><img src="images/7.jpegg" alt=""></span>
+                <span><img src="images/8.jpeg" alt=""></span>
+                <span><img src="images/9.jpeg" alt=""></span>
+            </div>
+            <div>
+                <span><img src="images/10.jpeg" alt=""></span>
+                <span><img src="images/11.jpeg" alt=""></span>
+                <span><img src="images/12.jpeg" alt=""></span>
+            </div>
+        </div>
+        <img src="images/NextBtn.png" id="NextBtn" alt="">
+    </div>
+
+    <script>
+        let scrollContainer = document.querySelector(".gallery");
+        let BackBtn = document.getElementById("BackBtn");
+        let NextBtn = document.getElementById("NextBtn");
+
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault;
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = "smooth";
+        })
+        NextBtn.addEventListener("click", () => {
+            scrollContainer.scrollLeft += 900;
+            scrollContainer.style.scrollBehavior = "smooth";
+        })
+        BackBtn.addEventListener("click", (evt) => {
+            scrollContainer.scrollLeft -= 900;
+            scrollContainer.style.scrollBehavior = "smooth";
+        })
+    </script>
+</body></html>
